@@ -221,7 +221,7 @@ async function sliceModel({
 
 const command = [
     "CuraEngine slice -v",
-    `-j "'ultimaker3.def.json"`,
+    `-j ultimaker3.def.json`,
     `-o "${outputPath}"`,
     `-l "${path.join(filePath, inputFilename)}"`,
 ].join(" ");
