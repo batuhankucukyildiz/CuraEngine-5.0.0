@@ -314,6 +314,7 @@ async function sliceModel({
   const command = [
     "CuraEngine slice -v",
     `-j "${printerDef}"`,
+    `-j "${extrudersDir}"`,
     `-d ${printerId}`,
     `-o "${outputPath}"`,
     generalFlags,
