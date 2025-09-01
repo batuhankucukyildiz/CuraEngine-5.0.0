@@ -219,13 +219,17 @@ async function sliceModel({
   console.log(`📄 Output path: ${outputPath}`); // DEBUG
   console.log(`📋 Input filename: ${inputFilename}`); // DEBUG
 
-const command = [
+  const curaResources = "/usr/share/cura/resources";
+
+  const command = [
     "CuraEngine slice -v",
-    `-j ultimaker3.def.json`,
+    `-j "${path.join(curaResources, "definitions", "ultimaker3.def.json")}"`,
+    `-j "${path.join(curaResources, "extruders", "ultimaker3_extruder_left.def.json")}"`,
+    `-j "${path.join(curaResources, "extruders", "ultimaker3_extruder_right.def.json")}"`,
     `-o "${outputPath}"`,
-    `-l "${path.join(filePath, inputFilename)}"`,
-].join(" ");
-  
+    `-l "${path.join(filePath, inputFilename)}"`
+  ].join(" ");
+    
   
 let output;
 try {
