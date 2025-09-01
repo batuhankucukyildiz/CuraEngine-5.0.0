@@ -515,16 +515,11 @@ async function sliceModel({
   const e1Flags = buildSettingsFlags(e1Settings);
 
   const printerId = "ultimaker3";
-  
-  const command = [
+
+const command = [
     "CuraEngine slice -v",
     `-j "${printerDefPath}"`,
     `-o "${outputPath}"`,
-    "-e0",
-    e0Flags,
-    "--next", 
-    "-e1",
-    e1Flags,
     `-l "${path.join(filePath, inputFilename)}"`,
 ].join(" ");
   
