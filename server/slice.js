@@ -43,283 +43,6 @@ const MATERIALS = {
   },
 };
 
-const generalSettings = {
-  // Acceleration ayarları
-  acceleration_enabled: true,
-  acceleration_prime_tower: 2000,
-  acceleration_print: 3500,
-  acceleration_support: 2000,
-  acceleration_support_interface: 1000,
-  acceleration_topbottom: 1000,
-  acceleration_wall: 1500,
-  acceleration_wall_0: 1000,
-  acceleration_infill: 3500,
-  
-  // Adaptive layer height
-  adaptive_layer_height_enabled: true,
-  adaptive_layer_height_variation: 0.04,
-  adaptive_layer_height_variation_step: 0.04,
-  
-  // Platform adhesion
-  adhesion_extruder_nr: 1,
-  adhesion_type: "raft",
-  brim_width: 8,
-  
-  // Layer ayarları
-  layer_height: 0.28,
-  layer_height_0: 0.4,
-  
-  // Prime tower ayarları
-  prime_tower_enable: true,
-  prime_tower_position_x: 75,
-  prime_tower_position_y: 95,
-  prime_tower_size: 35,
-  prime_tower_min_volume: 6,
-  prime_tower_wipe_enabled: false,
-  
-  // Raft ayarları
-  raft_interface_layers: 3,
-  raft_interface_thickness: 0.2,
-  raft_margin: 15,
-  raft_smoothing: 5,
-  raft_base_thickness: 0.24,
-  raft_base_line_width: 0.8,
-  raft_base_speed: 15,
-  raft_surface_layers: 2,
-  raft_surface_thickness: 0.2,
-  raft_surface_line_width: 0.4,
-  raft_surface_speed: 20,
-  
-  // Material shrinkage
-  material_shrinkage_percentage_x: 100,
-  material_shrinkage_percentage_y: 100,
-  material_shrinkage_percentage_z: 100,
-  material_shrinkage_percentage_xy: 100,
-  
-  // Extrusion ayarları
-  relative_extrusion: false,
-  
-  // Machine geometry - Ultimaker 3 profilinden alındı
-  machine_head_polygon: "[]",
-  machine_head_with_fans_polygon: "[[-41.9,-45.8],[-41.9,33.9],[59.9,33.9],[59.9,-45.8]]",
-  machine_disallowed_areas: "[[[-116.5,-103.5],[-116.5,-107.5],[-100.9,-107.5],[-100.9,-103.5]],[[-116.5,105.8],[-96.9,105.8],[-96.9,107.5],[-116.5,107.5]]]",
-  nozzle_disallowed_areas: "[]",
-  
-  // Cooling ayarları
-  cool_fan_speed: 50,
-  cool_fan_speed_max: 100,
-  cool_fan_speed_min: 0,
-  cool_min_speed: 10,
-  cool_fan_full_at_height: 0.3,
-  cool_fan_enabled: true,
-  
-  // Retraction ayarları
-  retraction_amount: 6.5,
-  retraction_speed: 25,
-  retraction_retract_speed: 25,
-  retraction_prime_speed: 15,
-  retraction_min_travel: 1.5,
-  retraction_hop_enabled: true,
-  retraction_hop: 2,
-  retraction_hop_only_when_collides: true,
-  
-  // Support ayarları
-  support_enable: false,
-  support_pattern: "zigzag",
-  support_angle: 45,
-  support_z_distance: 0.2,
-  support_xy_distance: 0.7,
-  
-  // Speed ayarları
-  speed_layer_0: 20,
-  speed_print: 35,
-  speed_travel: 250,
-  speed_wall: 30,
-  speed_wall_0: 20,
-  speed_wall_x: 30,
-  speed_topbottom: 20,
-  speed_support: 20,
-  speed_support_interface: 20,
-  speed_prime_tower: 20,
-  
-  // Machine tanımları
-  machine_name: "custom_printer",
-  machine_width: 220,
-  machine_depth: 220,
-  machine_height: 250,
-  machine_heated_bed: true,
-  machine_center_is_zero: false,
-  machine_extruder_count: 2,
-  machine_extruders_share_nozzle: false,
-  machine_nozzle_size: 0.4,
-  machine_nozzle_temp: 200,
-  machine_bed_temp: 60,
-  machine_acceleration: 3000,
-  machine_max_feedrate_x: 300,
-  machine_max_feedrate_y: 300,
-  machine_max_feedrate_z: 40,
-  machine_gcode_flavor: "RepRap",
-  
-  // Mesh ayarları - ZORUNLU
-  mesh_rotation_matrix: "[[1,0,0],[0,1,0],[0,0,1]]",
-  mesh_position_x: 0,
-  mesh_position_y: 0,
-  mesh_position_z: 0,
-  center_object: true,
-  
-  // Mesh tipleri - ZORUNLU
-  infill_mesh: false,
-  cutting_mesh: false,
-  anti_overhang_mesh: false,
-  support_mesh: false,
-  support_mesh_drop_down: true,
-  
-  // Infill ayarları
-  infill_sparse_density: 20,
-  infill_pattern: "triangles",
-  infill_line_distance: 2.0,
-  infill_overlap: 0,
-  infill_wipe_dist: 0,
-  
-  // Wall ayarları
-  wall_line_count: 2,
-  wall_line_width_0: 0.45,
-  wall_line_width_x: 0.45,
-  wall_thickness: 0.8,
-  wall_0_inset: 0,
-  
-  // Top/Bottom ayarları
-  top_layers: 4,
-  bottom_layers: 4,
-  top_thickness: 1.12,
-  bottom_thickness: 1.12,
-  top_bottom_thickness: 1,
-  
-  // Material ayarları
-  material_diameter: 1.75,
-  material_density: 1.24,
-  material_flow: 100,
-  material_bed_temperature: 60,
-  material_bed_temperature_layer_0: 60,
-  material_print_temperature: 200,
-  material_print_temperature_layer_0: 210,
-  material_initial_print_temperature: 205,
-  default_material_print_temperature: 200,
-  
-  // Build plate temperature
-  build_plate_temperature: 60,
-  
-  // Skirt ayarları
-  skirt_line_count: 3,
-  skirt_gap: 3,
-  skirt_minimal_length: 250,
-  
-  // Quality ayarları
-  magic_mesh_surface_mode: "normal",
-  magic_spiralize: false,
-  
-  // Travel ayarları
-  travel_compensate_overlapping_walls_enabled: false,
-  travel_avoid_other_parts: true,
-  travel_avoid_supports: true,
-  travel_avoid_distance: 3,
-  
-  // Z-seam ayarları
-  z_seam_type: "back",
-  z_seam_corner: "z_seam_corner_weighted",
-  
-  // Jerk ayarları
-  jerk_enabled: true,
-  jerk_print: 8,
-  jerk_travel: 8,
-  
-  // Coasting ayarları
-  coasting_enable: false,
-  
-  // Ironing ayarları
-  ironing_enabled: false,
-  
-  // Anti-overhang mesh ayarları
-  conical_overhang_enabled: false,
-  
-  // Draft shield ayarları
-  draft_shield_enabled: false,
-  
-  // Tree support ayarları
-  support_tree_enable: false,
-  
-  // Wireframe printing ayarı
-  wireframe_enabled: false,
-  
-  // Print statistics
-  print_statistics: true,
-  
-  // Prime blob
-  prime_blob_enable: true,
-  
-  // Line width ayarları
-  line_width: 0.45,
-  
-  // Gantry height
-  gantry_height: 60,
-  
-  // Multiple mesh overlap
-  multiple_mesh_overlap: 0,
-  
-  // Optimize wall printing order
-  optimize_wall_printing_order: true,
-  
-  // Skin overlap
-  skin_overlap: 10,
-  
-  // Switch extruder ayarları
-  switch_extruder_retraction_amount: 8,
-  switch_extruder_prime_speed: 15,
-  
-  // Zig zaggify infill
-  zig_zaggify_infill: true,
-  
-  // Machine start/end gcode
-  machine_start_gcode: "",
-  machine_end_gcode: "",
-  
-  // Extruder prime position
-  extruder_prime_pos_abs: true,
-  
-  // Machine heat up/cool down speeds
-  machine_nozzle_heat_up_speed: 1.4,
-  machine_nozzle_cool_down_speed: 0.8,
-  machine_min_cool_heat_time_window: 15
-};
-
-const baseE0 = {
-  acceleration_infill: 1500,
-  acceleration_print: 2000,
-  line_width: 0.45,
-  material_flow: 96,
-  material_flow_layer_0: 98,
-  speed_print: 20,
-  speed_travel: 175,
-  wall_thickness: 0.8,
-  material_initial_print_temperature: 205,
-  material_print_temperature: 200,
-  material_print_temperature_layer_0: 210
-};
-
-const baseE1 = {
-  acceleration_infill: 2000,
-  acceleration_print: 2400,
-  line_width: 0.45,
-  material_flow: 96,
-  material_flow_layer_0: 98,
-  speed_print: 40,
-  speed_travel: 175,
-  wall_thickness: 0.8,
-  material_initial_print_temperature: 205,
-  material_print_temperature: 200,
-  material_print_temperature_layer_0: 210,
-  print_statistics: true
-};
 // ---------- STDOUT HEADER PARSER ----------
 function parseStdoutHeader(stdout) {
   try {
@@ -510,11 +233,6 @@ async function sliceModel({
   console.log(`📁 App directory: ${appDir}`); // DEBUG
   console.log(`📄 Output path: ${outputPath}`); // DEBUG
   console.log(`📋 Input filename: ${inputFilename}`); // DEBUG
-  const generalFlags = buildSettingsFlags(generalSettings);
-  const e0Flags = buildSettingsFlags(e0Settings);
-  const e1Flags = buildSettingsFlags(e1Settings);
-
-  const printerId = "ultimaker3";
 
 const command = [
     "CuraEngine slice -v",
@@ -524,14 +242,28 @@ const command = [
 ].join(" ");
   
   
-  let output;
-  try {
-    output = execSync(command + " 2>&1", { encoding: "utf-8" });
-    console.log("CuraEngine Output:\n", output);
-  } catch (err) {
-    console.error("❌ CuraEngine error:", err.message);
-    throw err;
+let output;
+try {
+  output = execSync(command + " 2>&1", { encoding: "utf-8" });
+  console.log("✅ CuraEngine başarılı:", output);
+} catch (err) {
+  console.error("❌ CuraEngine error:", err.message);
+  
+  // Detaylı hata bilgileri
+  console.error("❌ CuraEngine stderr:", err.stderr);
+  console.error("❌ CuraEngine stdout:", err.stdout); 
+  console.error("❌ Exit code:", err.status);
+  console.error("❌ Signal:", err.signal);
+  console.error("❌ Command:", command);
+  
+  // Eğer stdout varsa onu da göster
+  if (err.stdout) {
+    console.error("❌ Full stdout output:");
+    console.error(err.stdout);
   }
+  
+  throw err;
+}
 
   // ---- STDOUT'dan Header Parse Et ----
   const hdr = parseStdoutHeader(output);
