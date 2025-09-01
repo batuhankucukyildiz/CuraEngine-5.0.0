@@ -153,7 +153,7 @@ const generalSettings = {
   machine_max_feedrate_x: 300,
   machine_max_feedrate_y: 300,
   machine_max_feedrate_z: 40,
-  machine_gcode_flavor: "RepRap (Marlin/Sprinter)",
+  machine_gcode_flavor: "RepRap",
   
   // Mesh ayarları - ZORUNLU
   mesh_rotation_matrix: "[[1,0,0],[0,1,0],[0,0,1]]",
@@ -273,7 +273,7 @@ const generalSettings = {
   
   // Machine start/end gcode
   machine_start_gcode: "",
-  machine_end_gcode: "G91 ;Relative movement\\nG0 F15000 X8.0 Z0.5 E-4.5 ;Wiping+material retraction\\nG0 F10000 Z1.5 E4.5 ;Compensation for the retraction\\nG90 ;Disable relative movement",
+  machine_end_gcode: "",
   
   // Extruder prime position
   extruder_prime_pos_abs: true,
@@ -312,7 +312,6 @@ const baseE1 = {
   material_print_temperature_layer_0: 210,
   print_statistics: true
 };
-
 // ---------- STDOUT HEADER PARSER ----------
 function parseStdoutHeader(stdout) {
   try {
