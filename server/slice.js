@@ -243,6 +243,9 @@ const generalSettings = {
   // Tree support ayarları
   support_tree_enable: false,
   
+  // Wireframe printing ayarı
+  wireframe_enabled: false,
+  
   // Print statistics
   print_statistics: true,
   
