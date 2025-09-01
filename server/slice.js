@@ -312,12 +312,12 @@ async function sliceModel({
 
   const command = [
     "CuraEngine slice -v",
-    `-d ${printerId}`,                 // sadece printer ID
+    // `-j "${printer_def}"`,  // Bu satırı kaldırın
     `-o "${outputPath}"`,
     generalFlags,
     "-e0",
     e0Flags,
-    "--next",
+    "--next", 
     "-e1",
     e1Flags,
     "-s print_statistics=true",
