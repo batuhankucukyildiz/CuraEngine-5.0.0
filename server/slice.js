@@ -54,7 +54,18 @@ const generalSettings = {
   prime_tower_size: 35,
   raft_interface_layers: 3,
   raft_interface_thickness: 0.2,
+
+  // 👇 Eksik default değerler (5.x için gerekli)
+  material_shrinkage_percentage_x: 100,
+  material_shrinkage_percentage_y: 100,
+  material_shrinkage_percentage_z: 100,
+  relative_extrusion: false,
+  machine_disallowed_areas: "",
+  nozzle_disallowed_areas: "",
+  machine_head_polygon: "",
+  machine_head_with_fans_polygon: "",
 };
+
 
 const baseE0 = {
   acceleration_infill: 1500,
