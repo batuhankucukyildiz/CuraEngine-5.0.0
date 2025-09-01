@@ -270,7 +270,6 @@ function volumeToGrams(volume_mm3, density_g_cm3) {
 // ---- Slicing ana fonksiyonu ----
 async function sliceModel({
   inputFilename,
-  printer_def = path.join(appDir, "resources/definitions/ultimaker3.def.json"),
   material,     
   materialE0,
   materialE1,
@@ -278,6 +277,9 @@ async function sliceModel({
   filamentDiameterE0Mm,
   filamentDiameterE1Mm,
 }) {
+  const resourcesDir = path.join(appDir, "resources");
+  const printerId = "ultimaker3";
+
   // Malzeme presetleri
   const matE0Name = (materialE0 || material || "PLA").toUpperCase();
   const matE1Name = (materialE1 || material || "PLA").toUpperCase();
@@ -308,7 +310,8 @@ async function sliceModel({
 
   const command = [
     "CuraEngine slice -v",
-    `-j "${printer_def}"`,
+    `-j "${resourcesDir}"`,
+    `-d ${printerId}`,
     `-o "${outputPath}"`,
     generalFlags,
     "-e0",
@@ -319,6 +322,7 @@ async function sliceModel({
     "-s print_statistics=true",
     `-l "${path.join(filePath, inputFilename)}"`,
   ].join(" ");
+  
 
   let output;
   try {
