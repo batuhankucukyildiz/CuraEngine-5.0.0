@@ -278,16 +278,14 @@ async function sliceModel({
   filamentDiameterE1Mm,
 }) {
   const appDir        = __dirname;
-  const resourcesDir  = path.join(appDir, "resources");
-  const definitionsDir= path.join(resourcesDir, "definitions");
-  const extrudersDir  = path.join(resourcesDir, "extruders");
+  const definitionsDir = path.join(appDir, "resources", "definitions");
+  const extrudersDir   = path.join(appDir, "resources", "extruders");
   
   const printerDef    = path.join(definitionsDir, "ultimaker3.def.json");
   const extruderLeft  = path.join(extrudersDir, "ultimaker3_extruder_left.def.json");
   const extruderRight = path.join(extrudersDir, "ultimaker3_extruder_right.def.json");
-  
   const printerId     = "ultimaker3";
-  
+    
   // Malzeme presetleri
   const matE0Name = (materialE0 || material || "PLA").toUpperCase();
   const matE1Name = (materialE1 || material || "PLA").toUpperCase();
@@ -332,6 +330,7 @@ async function sliceModel({
     "-s print_statistics=true",
     `-l "${path.join(filePath, inputFilename)}"`,
   ].join(" ");
+  
 
   let output;
   try {
