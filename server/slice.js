@@ -270,7 +270,7 @@ function volumeToGrams(volume_mm3, density_g_cm3) {
 // ---- Slicing ana fonksiyonu ----
 async function sliceModel({
   inputFilename,
-  printer_def = path.join(appDir, "ultimaker3.def.json"),
+  printer_def = path.join(appDir, "resources/definitions/ultimaker3.def.json"),
   material,     
   materialE0,
   materialE1,
