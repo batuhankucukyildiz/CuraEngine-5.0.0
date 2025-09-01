@@ -42,6 +42,7 @@ const MATERIALS = {
 
 // ---- Genel/Extruder ayarları ----
 const generalSettings = {
+  // Senin zaten olanlar:
   acceleration_enabled: true,
   adaptive_layer_height_enabled: true,
   adhesion_extruder_nr: 1,
@@ -55,7 +56,7 @@ const generalSettings = {
   raft_interface_layers: 3,
   raft_interface_thickness: 0.2,
 
-  // 🔧 Eklenmesi gereken zorunlu değerler:
+  // 🔧 Eksik olan zorunlular:
   material_shrinkage_percentage_x: 100,
   material_shrinkage_percentage_y: 100,
   material_shrinkage_percentage_z: 100,
@@ -66,28 +67,11 @@ const generalSettings = {
   machine_disallowed_areas: "",
   nozzle_disallowed_areas: "",
 
-  // CuraEngine’in dump ettiği bazı zorunlu ayarlar:
-  raft_airgap: 0.3,
-  raft_base_thickness: 0.3,
-  raft_base_line_width: 0.8,
-  raft_surface_thickness: 0.1,
-  raft_surface_line_width: 0.4,
-  raft_margin: 15,
-  raft_base_fan_speed: 0,
-  raft_base_jerk: 20,
-  raft_interface_line_spacing: 0.9,
-  raft_interface_line_width: 0.7,
-
-  // Cooling
+  // Soğutma
   cool_fan_speed: 100,
   cool_fan_speed_max: 100,
   cool_min_speed: 10,
   cool_fan_full_at_height: 0.3,
-
-  // Infill
-  infill_pattern: "grid",
-  infill_overlap: 10,
-  infill_wipe_dist: 0.1,
 
   // Retraction
   retraction_amount: 6.5,
@@ -95,7 +79,13 @@ const generalSettings = {
   retraction_min_travel: 1.5,
   retraction_hop_enabled: false,
 
-  // Speeds (örnek değerler, ihtiyacına göre değiştirebilirsin)
+  // Support
+  support_pattern: "zigzag",
+  support_angle: 60,
+  support_z_distance: 0.2,
+  support_xy_distance: 0.7,
+
+  // Speed (örnek, ihtiyacına göre değiştir)
   speed_layer_0: 20,
   speed_print: 60,
   speed_travel: 150,
@@ -105,17 +95,7 @@ const generalSettings = {
   speed_topbottom: 30,
   speed_support: 60,
   speed_support_interface: 40,
-  speed_prime_tower: 20,
-
-  // Support
-  support_pattern: "zigzag",
-  support_angle: 60,
-  support_z_distance: 0.2,
-  support_xy_distance: 0.7,
 };
-
-
-
 
 const baseE0 = {
   acceleration_infill: 1500,
