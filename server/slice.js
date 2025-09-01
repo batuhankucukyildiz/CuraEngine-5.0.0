@@ -71,6 +71,7 @@ const generalSettings = {
   prime_tower_position_x: 75,
   prime_tower_position_y: 95,
   prime_tower_size: 35,
+  prime_tower_min_volume: 6,
   prime_tower_wipe_enabled: false,
   
   // Raft ayarları
