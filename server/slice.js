@@ -277,9 +277,11 @@ async function sliceModel({
   filamentDiameterE0Mm,
   filamentDiameterE1Mm,
 }) {
-  const resourcesDir = path.join(appDir, "resources", "definitions");
-  const printerDef = path.join(resourcesDir, "ultimaker3.def.json");
-  const printerId = "ultimaker3";
+  const definitionsDir = path.join(appDir, "resources", "definitions");
+  const extrudersDir   = path.join(appDir, "resources", "extruders");
+  const printerDef     = path.join(definitionsDir, "ultimaker3.def.json");
+  const printerId      = "ultimaker3";
+  
 
   // Malzeme presetleri
   const matE0Name = (materialE0 || material || "PLA").toUpperCase();
@@ -309,10 +311,9 @@ async function sliceModel({
   const e0Flags = buildSettingsFlags(e0Settings);
   const e1Flags = buildSettingsFlags(e1Settings);
 
-  // ✅ Burada düzeltme yaptık
   const command = [
     "CuraEngine slice -v",
-    `-j "${printerDef}"`,   // ❌ klasör değil, JSON dosyası
+    `-j "${printerDef}"`,
     `-d ${printerId}`,
     `-o "${outputPath}"`,
     generalFlags,
