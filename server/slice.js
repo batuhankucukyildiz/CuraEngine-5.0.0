@@ -223,13 +223,18 @@ async function sliceModel({
 
   const command = [
     "CuraEngine slice -v",
-    `-j "${path.join(curaResources, "definitions", "ultimaker3.def.json")}"`,
-    `-j "${path.join(curaResources, "extruders", "ultimaker3_extruder_left.def.json")}"`,
-    `-j "${path.join(curaResources, "extruders", "ultimaker3_extruder_right.def.json")}"`,
+    `-j /root/cura-5.0.0/resources/definitions/ultimaker3.def.json`,
+    `-j /root/cura-5.0.0/resources/extruders/ultimaker3_extruder_left.def.json`,
+    `-j /root/cura-5.0.0/resources/extruders/ultimaker3_extruder_right.def.json`,
     `-o "${outputPath}"`,
-    `-l "${path.join(filePath, inputFilename)}"`
+    `-l "${path.join(filePath, inputFilename)}"`,
+    `-s layer_height=0.2`,
+    `-s wall_line_count=2`,
+    `-s wall_line_width=0.4`,
+    `-s infill_sparse_density=20`,
+    `-s material_print_temperature=200`,
+    `-s material_bed_temperature=60`
   ].join(" ");
-    
   
 let output;
 try {
