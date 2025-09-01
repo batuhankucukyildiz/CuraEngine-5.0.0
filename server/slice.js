@@ -52,7 +52,6 @@ const minimalSettings = {
   top_layers: 3,
   bottom_layers: 3
 };
-// ---- Genel/Extruder ayarları ----
 const generalSettings = {
   // Mevcut ayarların
   acceleration_enabled: true,
@@ -72,10 +71,13 @@ const generalSettings = {
   material_shrinkage_percentage_z: 100,
   material_shrinkage_percentage_xy: 100,
   relative_extrusion: false,
-  machine_head_polygon: "",
-  machine_head_with_fans_polygon: "",
-  machine_disallowed_areas: "",
-  nozzle_disallowed_areas: "",
+  
+  // 🔧 Polygon ayarları düzeltildi (boş string yerine boş array)
+  machine_head_polygon: "[]",
+  machine_head_with_fans_polygon: "[]",
+  machine_disallowed_areas: "[]",
+  nozzle_disallowed_areas: "[]",
+  
   cool_fan_speed: 100,
   cool_fan_speed_max: 100,
   cool_min_speed: 10,
@@ -97,8 +99,8 @@ const generalSettings = {
   speed_topbottom: 30,
   speed_support: 60,
   speed_support_interface: 40,
-
-  // 🔧 EKSİK OLAN ZORUNLU AYARLAR:
+ 
+  // 🔧 ZORUNLU AYARLAR:
   
   // Makine tanımları
   machine_name: "custom_printer",
@@ -111,6 +113,12 @@ const generalSettings = {
   machine_nozzle_size: 0.4,
   machine_nozzle_temp: 200,
   machine_bed_temp: 60,
+  
+  // 🔧 HATANIN ÇÖZÜMÜ - Mesh ayarları eklendi
+  mesh_rotation_matrix: "[[1,0,0],[0,1,0],[0,0,1]]",
+  mesh_position_x: 0,
+  mesh_position_y: 0,
+  mesh_position_z: 0,
   
   // Infill ayarları
   infill_sparse_density: 20,
@@ -182,7 +190,7 @@ const generalSettings = {
   
   // Print statistics
   print_statistics: true
-};
+ };
 
 const baseE0 = {
   acceleration_infill: 1500,
@@ -391,7 +399,7 @@ async function sliceModel({
   console.log(`📁 App directory: ${appDir}`); // DEBUG
   console.log(`📄 Output path: ${outputPath}`); // DEBUG
   console.log(`📋 Input filename: ${inputFilename}`); // DEBUG
-  const generalFlags = buildSettingsFlags(minimalSettings);
+  const generalFlags = buildSettingsFlags(generalSettings);
   const e0Flags = buildSettingsFlags(e0Settings);
   const e1Flags = buildSettingsFlags(e1Settings);
 
