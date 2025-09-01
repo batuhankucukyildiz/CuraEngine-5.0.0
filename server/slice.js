@@ -308,6 +308,8 @@ async function sliceModel({
   const e0Flags = buildSettingsFlags(e0Settings);
   const e1Flags = buildSettingsFlags(e1Settings);
 
+  const printerId = "ultimaker3";
+
   const command = [
     "CuraEngine slice -v",
     `-d ${printerId}`,                 // sadece printer ID
