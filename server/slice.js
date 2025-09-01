@@ -277,7 +277,7 @@ async function sliceModel({
   filamentDiameterE0Mm,
   filamentDiameterE1Mm,
 }) {
-  const resourcesDir = path.join(appDir, "resources");
+  const resourcesDir = path.join(appDir, "resources/definitions");
   const printerId = "ultimaker3";
 
   // Malzeme presetleri
