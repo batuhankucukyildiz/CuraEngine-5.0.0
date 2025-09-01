@@ -277,7 +277,8 @@ async function sliceModel({
   filamentDiameterE0Mm,
   filamentDiameterE1Mm,
 }) {
-  const resourcesDir = path.join(appDir, "resources");  // sadece resources
+  const resourcesDir = path.join(appDir, "resources", "definitions");
+  const printerDef = path.join(resourcesDir, "ultimaker3.def.json");
   const printerId = "ultimaker3";
 
   // Malzeme presetleri
@@ -311,8 +312,8 @@ async function sliceModel({
   // ✅ Burada düzeltme yaptık
   const command = [
     "CuraEngine slice -v",
-    `-j "${resourcesDir}"`,   // resources klasörü
-    `-d ${printerId}`,        // printer seçimi
+    `-j "${printerDef}"`,   // ❌ klasör değil, JSON dosyası
+    `-d ${printerId}`,
     `-o "${outputPath}"`,
     generalFlags,
     "-e0",
@@ -323,7 +324,6 @@ async function sliceModel({
     "-s print_statistics=true",
     `-l "${path.join(filePath, inputFilename)}"`,
   ].join(" ");
-
   
 
   let output;
