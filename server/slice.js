@@ -215,20 +215,6 @@ async function sliceModel({
   const matE0 = MATERIALS[matE0Name] || MATERIALS.PLA;
   const matE1 = MATERIALS[matE1Name] || MATERIALS.PLA;
 
-  // Sıcaklıkları uygula
-  const e0Settings = {
-    ...baseE0,
-    material_initial_print_temperature: matE0.e0.temp0,
-    material_print_temperature: matE0.e0.temp,
-    material_print_temperature_layer_0: matE0.e0.temp_layer0,
-  };
-  const e1Settings = {
-    ...baseE1,
-    material_initial_print_temperature: matE1.e1.temp0,
-    material_print_temperature: matE1.e1.temp,
-    material_print_temperature_layer_0: matE1.e1.temp_layer0,
-  };
-
   const outputPath = `${appDir}/outputs/${inputFilename.split(".")[0]}.gcode`;
   console.log(`📁 App directory: ${appDir}`); // DEBUG
   console.log(`📄 Output path: ${outputPath}`); // DEBUG
