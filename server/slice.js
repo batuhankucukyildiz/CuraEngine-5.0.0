@@ -277,14 +277,8 @@ async function sliceModel({
   filamentDiameterE0Mm,
   filamentDiameterE1Mm,
 }) {
-  const appDir        = __dirname;
   const definitionsDir = path.join(appDir, "resources", "definitions");
   const extrudersDir   = path.join(appDir, "resources", "extruders");
-  
-  const printerDef    = path.join(definitionsDir, "ultimaker3.def.json");
-  const extruderLeft  = path.join(extrudersDir, "ultimaker3_extruder_left.def.json");
-  const extruderRight = path.join(extrudersDir, "ultimaker3_extruder_right.def.json");
-  const printerId     = "ultimaker3";
     
   // Malzeme presetleri
   const matE0Name = (materialE0 || material || "PLA").toUpperCase();
@@ -316,8 +310,9 @@ async function sliceModel({
 
   const command = [
     "CuraEngine slice -v",
-    `-j "${path.join(appDir, "resources", "definitions")}"`,
-    `-j "${path.join(appDir, "resources", "extruders")}"`,
+    `-j "${path.join(definitionsDir, "ultimaker3.def.json")}"`,
+    `-j "${path.join(extrudersDir, "ultimaker3_extruder_left.def.json")}"`,
+    `-j "${path.join(extrudersDir, "ultimaker3_extruder_right.def.json")}"`,
     `-d ultimaker3`,
     `-o "${outputPath}"`,
     generalFlags,
@@ -330,8 +325,6 @@ async function sliceModel({
     `-l "${path.join(filePath, inputFilename)}"`
   ].join(" ");
   
-  
-
   let output;
   try {
     output = execSync(command + " 2>&1", { encoding: "utf-8" });
