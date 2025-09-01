@@ -279,15 +279,15 @@ async function sliceModel({
 }) {
   const appDir        = __dirname;
   const resourcesDir  = path.join(appDir, "resources");
-  const definitionsDir = path.join(resourcesDir, "definitions");
-  const extrudersDir   = appDir; // çünkü extruder dosyaların server/ dizininde
+  const definitionsDir= path.join(resourcesDir, "definitions");
+  const extrudersDir  = path.join(resourcesDir, "extruders");
   
   const printerDef    = path.join(definitionsDir, "ultimaker3.def.json");
   const extruderLeft  = path.join(extrudersDir, "ultimaker3_extruder_left.def.json");
   const extruderRight = path.join(extrudersDir, "ultimaker3_extruder_right.def.json");
   
   const printerId     = "ultimaker3";
-
+  
   // Malzeme presetleri
   const matE0Name = (materialE0 || material || "PLA").toUpperCase();
   const matE1Name = (materialE1 || material || "PLA").toUpperCase();
