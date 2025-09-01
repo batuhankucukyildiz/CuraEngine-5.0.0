@@ -146,6 +146,7 @@ const generalSettings = {
   machine_heated_bed: true,
   machine_center_is_zero: false,
   machine_extruder_count: 2,
+  machine_extruders_share_nozzle: false,
   machine_nozzle_size: 0.4,
   machine_nozzle_temp: 200,
   machine_bed_temp: 60,
