@@ -42,7 +42,7 @@ const MATERIALS = {
 
 // ---- Genel/Extruder ayarları ----
 const generalSettings = {
-  // Senin zaten olanlar:
+  // Mevcut ayarların
   acceleration_enabled: true,
   adaptive_layer_height_enabled: true,
   adhesion_extruder_nr: 1,
@@ -55,8 +55,6 @@ const generalSettings = {
   prime_tower_size: 35,
   raft_interface_layers: 3,
   raft_interface_thickness: 0.2,
-
-  // 🔧 Eksik olan zorunlular:
   material_shrinkage_percentage_x: 100,
   material_shrinkage_percentage_y: 100,
   material_shrinkage_percentage_z: 100,
@@ -66,26 +64,18 @@ const generalSettings = {
   machine_head_with_fans_polygon: "",
   machine_disallowed_areas: "",
   nozzle_disallowed_areas: "",
-
-  // Soğutma
   cool_fan_speed: 100,
   cool_fan_speed_max: 100,
   cool_min_speed: 10,
   cool_fan_full_at_height: 0.3,
-
-  // Retraction
   retraction_amount: 6.5,
   retraction_speed: 25,
   retraction_min_travel: 1.5,
   retraction_hop_enabled: false,
-
-  // Support
   support_pattern: "zigzag",
   support_angle: 60,
   support_z_distance: 0.2,
   support_xy_distance: 0.7,
-
-  // Speed (örnek, ihtiyacına göre değiştir)
   speed_layer_0: 20,
   speed_print: 60,
   speed_travel: 150,
@@ -95,6 +85,91 @@ const generalSettings = {
   speed_topbottom: 30,
   speed_support: 60,
   speed_support_interface: 40,
+
+  // 🔧 EKSİK OLAN ZORUNLU AYARLAR:
+  
+  // Makine tanımları
+  machine_name: "custom_printer",
+  machine_width: 220,
+  machine_depth: 220,
+  machine_height: 250,
+  machine_heated_bed: true,
+  machine_center_is_zero: false,
+  machine_extruder_count: 2,
+  machine_nozzle_size: 0.4,
+  machine_nozzle_temp: 200,
+  machine_bed_temp: 60,
+  
+  // Infill ayarları
+  infill_sparse_density: 20,
+  infill_pattern: "grid",
+  infill_line_distance: 2.0,
+  
+  // Wall ayarları
+  wall_line_count: 2,
+  wall_line_width_0: 0.45,
+  wall_line_width_x: 0.45,
+  
+  // Top/Bottom ayarları
+  top_layers: 4,
+  bottom_layers: 4,
+  top_thickness: 1.12,
+  bottom_thickness: 1.12,
+  
+  // Material ayarları
+  material_diameter: 1.75,
+  material_density: 1.24,
+  material_flow: 100,
+  
+  // Skirt ayarları
+  skirt_line_count: 3,
+  skirt_gap: 3,
+  skirt_minimal_length: 250,
+  
+  // Quality ayarları
+  magic_mesh_surface_mode: "normal",
+  magic_spiralize: false,
+  
+  // Platform adhesion
+  brim_width: 8,
+  raft_margin: 15,
+  raft_smoothing: 5,
+  raft_base_thickness: 0.24,
+  raft_base_line_width: 0.8,
+  raft_base_speed: 15,
+  raft_surface_layers: 2,
+  raft_surface_thickness: 0.2,
+  raft_surface_line_width: 0.4,
+  raft_surface_speed: 20,
+  
+  // Travel ayarları
+  travel_compensate_overlapping_walls_enabled: false,
+  travel_avoid_other_parts: true,
+  travel_avoid_supports: true,
+  
+  // Z-seam ayarları
+  z_seam_type: "back",
+  z_seam_corner: "z_seam_corner_weighted",
+  
+  // Coasting ayarları
+  coasting_enable: false,
+  
+  // Ironing ayarları
+  ironing_enabled: false,
+  
+  // Anti-overhang mesh ayarları
+  conical_overhang_enabled: false,
+  
+  // Draft shield ayarları
+  draft_shield_enabled: false,
+  
+  // Experimental ayarları
+  support_tree_enable: false,
+  adaptive_layer_height_variation: 0.04,
+  adaptive_layer_height_variation_step: 0.04,
+  
+  // Print statistics
+  print_statistics: true
 };
 
 const baseE0 = {
