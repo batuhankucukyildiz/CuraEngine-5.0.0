@@ -230,6 +230,7 @@ function volumeToGrams(volume_mm3, density_g_cm3) {
 async function sliceModel({
   inputFilename,
   printer_def = "ultimaker3.def.json",
+  material,     
   materialE0,
   materialE1,
   filamentDiameterMm = 1.75, // varsayılan değer
