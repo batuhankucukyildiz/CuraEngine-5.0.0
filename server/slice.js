@@ -40,6 +40,18 @@ const MATERIALS = {
   },
 };
 
+const minimalSettings = {
+  machine_width: 220,
+  machine_depth: 220,
+  machine_height: 250,
+  machine_extruder_count: 2,
+  machine_nozzle_size: 0.4,
+  layer_height: 0.2,
+  infill_sparse_density: 15,
+  wall_line_count: 2,
+  top_layers: 3,
+  bottom_layers: 3
+};
 // ---- Genel/Extruder ayarları ----
 const generalSettings = {
   // Mevcut ayarların
@@ -379,7 +391,7 @@ async function sliceModel({
   console.log(`📁 App directory: ${appDir}`); // DEBUG
   console.log(`📄 Output path: ${outputPath}`); // DEBUG
   console.log(`📋 Input filename: ${inputFilename}`); // DEBUG
-  const generalFlags = buildSettingsFlags(generalSettings);
+  const generalFlags = buildSettingsFlags(minimalSettings);
   const e0Flags = buildSettingsFlags(e0Settings);
   const e1Flags = buildSettingsFlags(e1Settings);
 
