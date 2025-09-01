@@ -10,7 +10,7 @@ const appDir = dirname(require.main.filename);
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = 8080
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, `${appDir}/uploads`),
