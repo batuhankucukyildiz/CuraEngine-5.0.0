@@ -310,10 +310,7 @@ async function sliceModel({
 
   const command = [
     "CuraEngine slice -v",
-    `-j "${path.join(definitionsDir, "ultimaker3.def.json")}"`,
-    `-j "${path.join(extrudersDir, "ultimaker3_extruder_left.def.json")}"`,
-    `-j "${path.join(extrudersDir, "ultimaker3_extruder_right.def.json")}"`,
-    `-d ultimaker3`,
+    `-d ${printerId}`,                 // sadece printer ID
     `-o "${outputPath}"`,
     generalFlags,
     "-e0",
@@ -322,8 +319,9 @@ async function sliceModel({
     "-e1",
     e1Flags,
     "-s print_statistics=true",
-    `-l "${path.join(filePath, inputFilename)}"`
+    `-l "${path.join(filePath, inputFilename)}"`,
   ].join(" ");
+  
   
   let output;
   try {
