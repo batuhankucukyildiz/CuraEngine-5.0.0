@@ -188,6 +188,7 @@ const generalSettings = {
   adaptive_layer_height_variation: 0.04,
   adaptive_layer_height_variation_step: 0.04,
   
+  center_object: true,
   // Print statistics
   print_statistics: true
  };
