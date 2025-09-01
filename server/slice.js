@@ -5,7 +5,6 @@ const { dirname } = require("path");
 const appDir = dirname(require.main.filename);
 const filePath = `${appDir}/uploads`;
 
-const printerDefPath = path.join(__dirname, 'ultimaker3.def.json');
 
 
 function buildSettingsFlags(obj) {
@@ -222,7 +221,7 @@ async function sliceModel({
 
 const command = [
     "CuraEngine slice -v",
-    `-j "${printerDefPath}"`,
+    `-j "'ultimaker3.def.json"`,
     `-o "${outputPath}"`,
     `-l "${path.join(filePath, inputFilename)}"`,
 ].join(" ");
